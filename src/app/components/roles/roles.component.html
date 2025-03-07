@@ -1,20 +1,40 @@
 <div class="row">
+  <div class="col-md-2">
+    <label for="values">Values are </label>
 
-  <div class="col-2">
-    <input [type]="inputType" [(ngModel)]="name" />
+    <ul>
+      <li *ngFor="let values of values ">
 
+        {{values.role}}
 
+      </li>
+    </ul>
   </div>
-  <h1>{{name}}</h1>
+</div>
 
-  <div class="col-3">
-    <select [(ngModel)]="selection">
-      <option value="TS">TS</option>
-      <option value="AP">AP</option>
+<div class="col-4">
+  <select name="" id="">
+    <option class="btn btn-primary" *ngFor="let role of values" [value]="role.role">{{role.role}}</option>
+  </select>
+</div>
 
-      <option value="DL">DL</option>
+<div class="col-4">
+  <button class="btn btn-primary" *ngFor="let role of values" [value]="role.role">{{role.role}}</button>
+</div>
 
-    </select>
-    <button>{{selection}}</button>
-  </div>
+<div class="row">
+  <table class="table table-boardered">
+    <thead>
+      <tr>
+        <th> Sr No </th>
+        <th> Role Name</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let a of values;let srno= index">
+        <td>{{srno+1}}</td>
+        <td>{{a.role}}</td>
+      </tr>
+    </tbody>
+  </table>
 </div>

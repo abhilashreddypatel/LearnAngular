@@ -26,7 +26,9 @@ export class RolesComponent implements OnInit {
 
   getallroles() {
     this.httpclient
-      .get("https://freeapi.miniprojectideas.com/api/ClientStrive/GetAllRoles")
+      .get<GetAllRoles>(
+        "https://freeapi.miniprojectideas.com/api/ClientStrive/GetAllRoles"
+      )
       .subscribe((data: any) => {
         this.values = data.data;
       });

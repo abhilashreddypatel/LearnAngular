@@ -3,6 +3,7 @@ import { Component, inject, OnInit } from "@angular/core";
 import { FormsModule } from "@angular/forms";
 import { GetAllRoles } from "../get-all-roles";
 import { CommonModule } from "@angular/common";
+import { pipe } from "rxjs";
 
 @Component({
   selector: "app-roles",

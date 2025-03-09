@@ -1,0 +1,31 @@
+<p>filterpipes works!</p>
+
+<div class="row">
+  <div class="col-3">
+    <input type="text" [(ngModel)]="data">
+
+    <button (click)="addme()">Add User</button>
+    <div class="row">
+      <div class="col-2" *ngFor="let data of users | filter:data">
+        <h1>Hello</h1>
+        <p>{{data.name | uppercase}}</p>
+        <p>{{data.joinedDate | date}}</p>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- <div class="container">
+  <div class="row">
+    <div class="">
+      <div *ngFor="let data of users">
+        <label for="">Name is :
+        </label>
+
+
+      </div>
+
+
+    </div>
+
+  </div>
+</div> -->

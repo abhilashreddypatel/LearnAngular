@@ -27,13 +27,13 @@
     <thead>
       <tr>
         <th> Sr No </th>
-        <th> Role Name</th>
+        <th> Role Name </th>
       </tr>
     </thead>
     <tbody>
       <tr *ngFor="let a of values;let srno= index">
-        <td>{{srno+1}}</td>
-        <td>{{a.role}}</td>
+        <td>{{srno+1 }} </td>
+        <td>{{a.role | uppercase}}</td>
       </tr>
     </tbody>
   </table>

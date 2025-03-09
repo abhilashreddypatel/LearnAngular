@@ -27,6 +27,8 @@
   <div class="col-3">
 
     <button type="button" (click)="switchcomp('Roles')" class="btn btn-primary">Roles</button>
+    <button type="button" (click)="switchcomp('filterpipe')" class="btn btn-primary">FilterPipe</button>
+
     <button type="button" (click)="switchcomp('Designation')" class="btn btn-secondary">Designation</button>
   </div>
 </div>
@@ -42,6 +44,11 @@
     <div *ngIf="currentComponent == 'Designation'">
 
       <app-designation></app-designation>
+    </div>
+
+    <div *ngIf="currentComponent == 'filterpipe'">
+
+      <app-filterpipes></app-filterpipes>
     </div>
   </div>
 </div>

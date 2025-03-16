@@ -30,6 +30,8 @@
     <button type="button" (click)="switchcomp('filterpipe')" class="btn btn-primary">FilterPipe</button>
 
     <button type="button" (click)="switchcomp('Designation')" class="btn btn-secondary">Designation</button>
+    <button type="button" (click)="switchcomp('post')" class="btn btn-secondary">post</button>
+
   </div>
 </div>
 
@@ -49,6 +51,11 @@
     <div *ngIf="currentComponent == 'filterpipe'">
 
       <app-filterpipes></app-filterpipes>
+    </div>
+
+    <div *ngIf="currentComponent == 'post'">
+
+      <app-post></app-post>
     </div>
   </div>
 </div>

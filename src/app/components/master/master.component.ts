@@ -3,6 +3,7 @@ import { RolesComponent } from "../roles/roles.component";
 import { DesignationComponent } from "../designation/designation.component";
 import { CommonModule } from "@angular/common";
 import { FilterpipesComponent } from "../filterpipes/filterpipes.component";
+import { PostComponent } from "../post/post.component";
 
 @Component({
   selector: "app-master",
@@ -12,6 +13,7 @@ import { FilterpipesComponent } from "../filterpipes/filterpipes.component";
     CommonModule,
     DesignationComponent,
     FilterpipesComponent,
+    PostComponent,
   ],
   templateUrl: "./master.component.html",
   styleUrl: "./master.component.css",

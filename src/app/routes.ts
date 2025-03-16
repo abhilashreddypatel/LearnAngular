@@ -4,6 +4,7 @@ import { MasterComponent } from './components/master/master.component';
 import { RolesComponent } from './components/roles/roles.component';
 import { DesignationComponent } from './components/designation/designation.component';
 import { FilterpipesComponent } from './components/filterpipes/filterpipes.component';
+import { PostComponent } from './components/post/post.component';
 
 export const routes: Routes = [
   { path: '', redirectTo: 'app-master', pathMatch: 'full' },
@@ -11,4 +12,5 @@ export const routes: Routes = [
   { path: 'app-roles', component: RolesComponent },
   { path: 'app-designation', component: DesignationComponent },
   { path: 'app-filterpipes', component: FilterpipesComponent },
+  { path: 'app-post', component: PostComponent },
 ];

@@ -2,7 +2,14 @@ import { CommonModule } from "@angular/common";
 import { Component, OnDestroy, OnInit } from "@angular/core";
 import { FormsModule } from "@angular/forms";
 import { FilterPipe } from "../../pipes/filter.pipe";
-import { interval, Observable, Observer, Subscription } from "rxjs";
+import {
+  filter,
+  interval,
+  map,
+  Observable,
+  Observer,
+  Subscription,
+} from "rxjs";
 
 @Component({
   selector: "app-filterpipes",
@@ -24,27 +31,38 @@ export class FilterpipesComponent implements OnInit, OnDestroy {
         observer.error("Error in template");
       }
       if (value > 4) {
-        observer.Complete();
+        observer.complete();
       }
     }, 1000);
   });
   ngOnInit(): void {
     // this.clickme();
-    this.obssub1 = this.customobs.subscribe(
-      (data: any) => {
-        console.log(data);
-      },
-      (error: any) => {
-        console.log(error);
-      },
-      () => {
-        console.log("Complete");
-      }
-    );
+    this.obssub1 = this.customobs
+      .pipe(
+        filter<number>((data) => {
+          if (data > 0) {
+            return true;
+          }
+          return false;
+        }),
+        map((data: number) => {
+          return "data is " + data;
+        })
+      )
+      .subscribe(
+        (data: any) => {
+          console.log(data);
+        },
+        (error: any) => {
+          console.log(error);
+        },
+        () => {
+          console.log("Complete");
+        }
+      );
   }
 
   ngOnDestroy(): void {
-    // this.obssub.unsubscribe();
     this.obssub1.unsubscribe();
   }
 

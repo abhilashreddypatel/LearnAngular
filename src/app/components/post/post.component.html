@@ -1,0 +1,29 @@
+<div class="row">
+  <form [formGroup]="postForm" (ngSubmit)="createpost()">
+
+    <div class="container">
+      <label for="title">Title</label>
+      <input formControlName="title" type="text">
+      <div *ngIf="postForm.get('title')?.invalid && postForm.get('title')?.touched">
+        Please enter trile</div>
+    </div>
+
+
+    <div class="container">
+      <label for="">Content</label>
+      <input formControlName="Content" type="text">
+    </div>
+
+    <div class="my-2">
+      <button class="btn btn-primary"> Post</button>
+    </div>
+  </form>
+
+  <div class="my-2">
+    <button class="btn btn-primary" (click)="getposts()"> Get Post</button>
+  </div>
+  <br>
+  <div class="container">
+    <button (click)="deletepost()">Delete </button>
+  </div>
+</div>
